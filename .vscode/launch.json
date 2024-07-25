@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "localhost に対して Chrome を起動する",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Backend Server",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/server/index.js",
+      "env": {
+        "NODE_ENV": "development",
+        "DATABASE_URL": "postgresql://root:4zO3dLTYYb4OQZ7LKvpO36bmU5GpXo1J@dpg-cqgvmsaju9rs73ed6beg-a.singapore-postgres.render.com/db_2hhh"
+      },
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    }
+  ]
+}
