@@ -17,6 +17,10 @@ const pool = new Pool({
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 // サンプルのエンドポイント
 app.get('/api/data', async (req, res) => {
     try {
