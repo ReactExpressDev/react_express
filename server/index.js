@@ -1,8 +1,9 @@
 const express = require('express');
+const { Pool } = require('pg');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const { Pool } = require('pg');
 
+// PostgreSQLプールの設定
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -10,7 +11,8 @@ const pool = new Pool({
     }
 });
 
-app.get('/db', async (req, res) => {
+// サンプルデータ取得エンドポイント
+app.get('/api/data', async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM your_table');
@@ -20,10 +22,6 @@ app.get('/db', async (req, res) => {
         console.error(err);
         res.send("Error " + err);
     }
-});
-
-app.get('/api', (req, res) => {
-    res.send('Hello from Express!');
 });
 
 app.listen(PORT, () => {
