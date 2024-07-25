@@ -12,8 +12,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //const apiUrl = process.env.REACT_APP_API_URL;
-        const response = await fetch('/api/data');
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await fetch(`${apiUrl}/api/data`);
         const data = await response.json();
         setData(data);
       } catch (error) {
