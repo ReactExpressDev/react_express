@@ -25,7 +25,9 @@ app.get('/', (req, res) => {
 app.get('/api/data', async (req, res) => {
     try {
         const client = await pool.connect();
+        console.log(client)
         const result = await client.query('SELECT * FROM your_table');
+        console.log(result)
         res.json(result.rows);
         client.release();
     } catch (err) {
