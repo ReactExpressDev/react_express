@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Button from '@mui/material/Button';
 
 interface Data {
   id: number;
@@ -32,6 +33,9 @@ const App: React.FC = () => {
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
+      <Button variant="contained" color="primary">
+        MUI Button
+      </Button>
     </div>
   );
 }
