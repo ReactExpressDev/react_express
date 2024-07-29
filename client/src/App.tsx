@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/header';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 interface Data {
   id: number;
@@ -36,6 +41,14 @@ const App: React.FC = () => {
       <Button variant="contained" color="primary">
         MUI Button
       </Button>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

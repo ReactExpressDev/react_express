@@ -16,13 +16,14 @@
     "axios": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
     "react-scripts": "^5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd ../server && node index.js",
+    "server": "cd ../server && node src/index.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
