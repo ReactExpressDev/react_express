@@ -1,7 +1,12 @@
+import styled from '@emotion/styled';
 import React from 'react';
 
-const HomePage: React.FC = () => {
-  return <div>Home Page</div>;
+const Title = styled('h1')({
+
+})
+
+function HomePage() {
+  return <Title>Home Page</Title>;
 };
 
 export default HomePage;
