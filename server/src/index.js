@@ -1,13 +1,13 @@
-const express = require('express');
-const { Pool } = require('pg');
-const cors = require('cors');
-require('dotenv').config();
+const express = require('express')
+const { Pool } = require('pg')
+const cors = require('cors')
+require('dotenv').config()
 
-const app = express();
-const port = process.env.PORT || 5000;
+const app = express()
+const port = process.env.PORT || 5000
 
 // CORSの設定
-app.use(cors());
+app.use(cors())
 
 // SSL接続を必須にする設定
 const pool = new Pool({
@@ -15,7 +15,7 @@ const pool = new Pool({
     ssl: {
         rejectUnauthorized: false
     }
-});
+})
 
 app.get('/', (req, res) => {
     res.send('Hello World!!!')
@@ -24,18 +24,18 @@ app.get('/', (req, res) => {
 // サンプルのエンドポイント
 app.get('/api/data', async (req, res) => {
     try {
-        const client = await pool.connect();
+        const client = await pool.connect()
         console.log(client)
-        const result = await client.query('SELECT * FROM your_table');
+        const result = await client.query('SELECT * FROM your_table')
         console.log(result)
-        res.json(result.rows);
-        client.release();
+        res.json(result.rows)
+        client.release()
     } catch (err) {
-        console.error('Database query error:', err);
-        res.status(500).send('Error');
+        console.error('Database query error:', err)
+        res.status(500).send('Error')
     }
-});
+})
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+    console.log(`Server is running on port ${port}`)
+})
