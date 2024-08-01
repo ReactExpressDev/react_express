@@ -1,16 +1,15 @@
 import { styled } from '@mui/system';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
-// スタイルを定義
-const Root = styled('div')({
+export const Root = styled('div')({
   flexGrow: 1,
 });
 
-const Title = styled(Typography)({
+export const Title = styled(Typography)({
   flexGrow: 1,
 });
 
-// コンポーネントで使用するスタイルをエクスポート
-export { Root, Title };
+export const StyledIconButton = styled(IconButton)({
+  color: '#fff',
+});
