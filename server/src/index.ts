@@ -17,12 +17,12 @@ const pool = new Pool({
     }
 })
 
-app.get('/', (req, res) => {
+app.get('/', (req: any, res: any) => {
     res.send('Hello World!!!')
 })
 
 // サンプルのエンドポイント
-app.get('/api/data', async (req, res) => {
+app.get('/api/data', async (req: any, res: any) => {
     try {
         const client = await pool.connect()
         console.log(client)
