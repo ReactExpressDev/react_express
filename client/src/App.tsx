@@ -35,20 +35,20 @@ function App(){
     color: 'white',
     backgroundColor: 'black',
     margin: 0,
-    minHeight: '100vh'
+    minHeight: '100vh',
   })
 
   return (
     <Root>
+      <Header />
       <Router>
-        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>
-      <Button variant="contained" color="primary">
+      <Button variant="contained">
         MUI Button
       </Button>
       <Typography>Data from Database</Typography>
